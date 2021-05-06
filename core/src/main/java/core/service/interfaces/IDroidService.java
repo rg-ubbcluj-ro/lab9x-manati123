@@ -6,13 +6,18 @@ import java.util.List;
 
 public interface IDroidService {
 
-    void addDroid(String name, String address, String phoneNumber);
-
-    List<Droid> getDroidsFromRepository();
-
-    List<Droid> getDroidsByModel(String model);
+    void addDroid(double powerUsage, double price, int batteryTime, String model, boolean driver);
 
     void deleteDroid(Long id);
 
-    void updateDroid(Long id, String name, String address, String phoneNumber);
+    List<Droid> getAllDroids();
+
+    List<Droid> getDroidsByMinimumPowerUsage(int filter);
+
+    List<Droid> getDroidsById(Long id);
+
+    List<Droid> getDroidsByModel(String model);
+
+    void updateDroid(Long id, double powerUsage, double price, int batteryTime, String model, boolean driver);
+
 }
