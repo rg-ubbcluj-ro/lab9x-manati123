@@ -5,8 +5,8 @@ import web.dto.Dto;
 
 import java.io.Serializable;
 
-public interface Converter <ID extends Serializable, Model extends BaseEntity<ID>, DTO extends Dto<ID>>{
-    Model convertDtoToModel(DTO dto);
+import java.io.Serializable;
 
-    DTO convertModelToDto(Model model);
+public interface Converter<ID extends Serializable, M, D extends Dto<ID>> {
+    D toDto(M model);
 }
