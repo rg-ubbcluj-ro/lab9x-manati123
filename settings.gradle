@@ -1,0 +1,4 @@
+rootProject.name = 'DroidDealership'
+include 'core'
+include 'web'
+
