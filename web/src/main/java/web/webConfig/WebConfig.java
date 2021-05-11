@@ -9,7 +9,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan({"web.controller", "web.converter"})
+@ComponentScan({"web.controller.*", "web.converter"})
 public class WebConfig {
     @Bean
     public WebMvcConfigurer corsConfigurer() {
@@ -18,7 +18,7 @@ public class WebConfig {
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
                         .allowedOrigins("http://localhost:4200", "http://localhost:8080")
-                        .allowedMethods("GET", "PUT", "POST", "DELETE");
+                        .allowedMethods("*");
             }
         };
     }

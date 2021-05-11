@@ -6,6 +6,7 @@ import core.service.interfaces.IDroidService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -29,7 +30,7 @@ public class DroidController {
 
     @RequestMapping(value = "/droids", method = RequestMethod.GET)
     CollectionDto<Long, DroidDto> getAllDroids() {
-        logger.info("Requesting droids..");
+        logger.trace("Requesting droids..");
         return new CollectionDto<>(droidService.getAllDroids()
                 .stream()
                 .map((droid -> droidConverter.toDto(droid)))
@@ -88,6 +89,11 @@ public class DroidController {
                 .stream()
                 .map((droid) -> droidConverter.toDto(droid))
                 .collect(Collectors.toList()));
+    }
+
+    @RequestMapping(value = "/hello", method = RequestMethod.GET)
+    ResponseEntity<String> getDroidsByMinimumPowerUsage() {
+        return new ResponseEntity<String>("Hello",new HttpHeaders(),HttpStatus.OK);
     }
 
     @RequestMapping(value = "/droids/{model}", method = RequestMethod.GET)
