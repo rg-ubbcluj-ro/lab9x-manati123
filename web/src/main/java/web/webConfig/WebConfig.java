@@ -9,7 +9,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan({"web.controller.*", "web.converter"})
+@ComponentScan({"web.controller", "web.converter"})
 public class WebConfig {
     @Bean
     public WebMvcConfigurer corsConfigurer() {
