@@ -1,0 +1,18 @@
+<div class="container">
+  <h1>Update Droid</h1>
+  <p><b>Please fill this form and submit to update the droid from the database.</b></p>
+
+  <form #droidForm = "ngForm" class="formWrapper" (ngSubmit)="updateDroid(droidForm.value)">
+    <input type="text" name="model" placeholder="Model:" [ngModel]="model"> <br>
+    <input type="number" name="price" placeholder="Price:" [ngModel]="price"> <br>
+    <input type="number" name="batteryTime" placeholder="Battery time:" [ngModel]="batteryTime"> <br>
+    <input type="number" name="powerUsage" placeholder="Power usage:" [ngModel]="powerUsage"> <br>
+    <input type="text" name="driver" placeholder="Is driver:" [ngModel]="driver"> <br>
+    <div class="button_container">
+      <button type="submit">
+        Update Droid
+      </button>
+      <button (click)="onCancel()">Cancel</button>
+    </div>
+  </form>
+</div>

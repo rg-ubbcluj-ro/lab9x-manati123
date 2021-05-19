@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="details">
+    <div class="insideDetails">
+      <button (click)="onBack()">Back</button>
+      <h1>Purchases</h1>
+    </div>
+    <div class="insideDetailsRight">
+      <input type="number" class="totalPrice" placeholder="Price:" [(ngModel)]="totalPrice" />
+    </div>
+  </div>
+  <table *ngIf="droidId == null">
+    <tr>
+      <th> MODEL </th>
+      <th> POWER USAGE </th>
+      <th> PRICE </th>
+      <th> DRIVER-MODE </th>
+      <TH> BATTERY TIME</TH>
+    </tr>
+    <tr *ngFor="let droid of droids">
+      <td>{{droid.model}}</td>
+      <td>{{droid.powerUsage}}</td>
+      <td>{{droid.price}}</td>
+      <td>{{droid.driver}}</td>
+      <td>{{droid.batteryTime}}</td>
+      <td>
+        <button class="addButton" (click)="addPurchase(droid.id)">Purchase</button>
+      </td>
+    </tr>
+  </table>
+  <table *ngIf="clientId == null">
+    <tr>
+      <th> NAME </th>
+      <th> PHONE NUMBER </th>
+      <th> ADDRESS </th>
+
+    </tr>
+    <tr *ngFor="let client of clients">
+      <td>{{client.name}}</td>
+      <td>{{client.phoneNumber}}</td>
+      <td>{{client.address }}</td>
+      <td>
+        <button class="addButton" (click)="addPurchase(client.id)">Purchase</button>
+      </td>
+    </tr>
+  </table>
+</div>

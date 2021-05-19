@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="details">
+    <div class="insideDetails">
+      <button (click)="onBack()">Back</button>
+      <h1>droids</h1>
+    </div>
+    <input #model type="text" (input)="refresh(model.value)" placeholder="Model:"/>
+    <button class="add" (click)="navigateToAdd()">
+      Add droid
+    </button>
+  </div>
+  <table>
+    <tr>
+      <th> MODEL </th>
+      <th> POWER USAGE </th>
+      <th> PRICE </th>
+      <th> DRIVER-MODE </th>
+      <TH> BATTERY TIME</TH>
+    </tr>
+
+    <tr *ngFor="let droid of droids">
+
+      <td>{{droid.model}}</td>
+      <td>{{droid.powerUsage}}</td>
+      <td>{{droid.price}}</td>
+      <td>{{droid.driver}}</td>
+      <td>{{droid.batteryTime}}</td>
+      <td>
+        <button id="updateButton" (click)="navigateToUpdate(droid.id)">Update</button>
+        <br>
+        <button id="deleteButton" (click)="navigateToDelete(droid.id)">Delete</button>
+        <br>
+        <button id="purchasesButton" (click)="navigateToPurchases(droid.id)">Purchases</button>
+        <br>
+      </td>
+    </tr>
+  </table>
+</div>

@@ -1,0 +1,15 @@
+<div class="container">
+  <h1>Create Receipt</h1>
+  <p><b>Please fill this form and submit to add the receipt to the database.</b></p>
+
+  <form #addReceiptForm = "ngForm" class="formWrapper" (ngSubmit)="addReceipt(addReceiptForm.value)">
+    <input type="number" name="purchaseID" placeholder="PurchaseID:" ngModel> <br>
+    <input type="number" name="totalPrice" placeholder="TotalPrice:" ngModel> <br>
+    <div class="button_container">
+      <button type="submit">
+        Add Receipt
+      </button>
+      <button (click)="onCancel()">Cancel</button>
+    </div>
+  </form>
+</div>

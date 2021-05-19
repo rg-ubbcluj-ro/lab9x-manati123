@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="details">
+    <div class="insideDetails">
+      <button (click)="onBack()">Back</button>
+      <h1>Clients</h1>
+    </div>
+    <button class="add" (click)="navigateToAdd()">
+      Add client
+    </button>
+  </div>
+  <table>
+    <tr>
+      <th> NAME </th>
+      <th> PHONE NUMBER </th>
+      <th> ADDRESS </th>
+
+    </tr>
+    <tr *ngFor="let client of clients">
+      <td>{{client.name}}</td>
+      <td>{{client.phoneNumber}}</td>
+      <td>{{client.address}}</td>
+      <td>
+        <button id="updateButton" (click)="navigateToUpdate(client.id)">Update</button>
+        <br>
+        <button id="deleteButton" (click)="navigateToDelete(client.id)">Delete</button>
+        <br>
+        <button id="purchasesButton" (click)="navigateToPurchases(client.id)">Purchases</button>
+        <br>
+      </td>
+    </tr>
+  </table>
+</div>

@@ -1,0 +1,19 @@
+<div class="container">
+  <h1>Create Droid</h1>
+  <p><b>Please fill this form and submit to add the droid to the database.</b></p>
+
+  <form [formGroup]="addDroidForm" class="formWrapper" (submit)="addDroid()">
+    <input type="text" name="model" placeholder="Model:" formControlName="model"> <br>
+    <input type="number" name="price" placeholder="Price:" formControlName="price"> <br>
+    <input type="number" name="batteryTime" placeholder="Battery time:" formControlName="batteryTime"> <br>
+    <input type="number" name="powerUsage" placeholder="Power usage:" formControlName="powerUsage"> <br>
+    <input type="text" name="driver" placeholder="Is driver:" formControlName="driver"> <br>
+
+    <div class="button_container">
+      <button type="submit">
+        Add Droid
+      </button>
+      <button (click)="onCancel()">Cancel</button>
+    </div>
+  </form>
+</div>

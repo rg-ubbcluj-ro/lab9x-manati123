@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="details">
+    <div class="insideDetails">
+      <button (click)="onBack()">Back</button>
+      <h1>Receipts</h1>
+    </div>
+    <button class="add" (click)="navigateToAdd()">
+      Add receipt
+    </button>
+  </div>
+  <table>
+    <tr>
+      <th> TOTAL PRICE</th>
+      <th> PURCHASE ID </th>
+    </tr>
+    <tr *ngFor="let receipt of receipts">
+
+      <td>{{receipt.totalPrice}}</td>
+      <td>{{receipt.purchaseID}}</td>
+      <td>
+        <button id="updateButton" (click)="navigateToUpdate(receipt.id)">Update</button>
+        <br>
+        <button id="deleteButton" (click)="navigateToDelete(receipt.id)">Delete</button>
+        <br>
+      </td>
+    </tr>
+  </table>
+</div>
