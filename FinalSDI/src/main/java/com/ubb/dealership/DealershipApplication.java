@@ -24,6 +24,6 @@ public class DealershipApplication {
 //                registry.addMapping("/**").allowedOrigins("http://localhost:8081","http://localhost:4200");
 //            }
 //        };
-//    }
+//    }kjkasdfsafkfs
 
 }
